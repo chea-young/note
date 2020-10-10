@@ -1,6 +1,4 @@
-# studyNote
-
-# Table of Contents
+# 목차
 1. [Deep Learning](#example)
 
 
