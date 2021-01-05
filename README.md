@@ -44,4 +44,9 @@
  
  
  ### Backend
+ 
+ ### Server Depoly
+ - Heroku
+ - pythonanywhere
+ - AWS
 
