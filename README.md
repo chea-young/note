@@ -2,7 +2,6 @@
 1. [Deep Learning](#example)
 
 
-
 ## Deep Learning
 ### FAST RCNN
 - SPP-net(SPP-net. Spatial Pyramid Pooling) RCNN 아이디어로 공간 풀링 통해 구배를 계산한다.
@@ -35,11 +34,9 @@
 - 비디오에서 이미지 추출
     """ ffmpeg -ss [시작시간] -t [길이] -i [동영상이름] -r [프레임레이트] -s [출력해상도] -qscale:v 2 -f image2 [이미지이름]"""
     ffmpeg -ss 00:00:03 -i file.mp4 -r 5 -s 720*480 -f image2 test-%d.jpg
+    ffmpeg -ss 00:00:02 -i 716.mp4 -r 8 -f image2 test716-%d.jpg
     -an : 오디오를 끄는 기능
     -ss : 시작 시간
     -i : 추출할 동영상 파일
     -r : 1초에 추출할 이미지 갯수
     
-
-
-
