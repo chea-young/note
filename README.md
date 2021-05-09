@@ -1,6 +1,15 @@
 # 목차
 1. [Deep Learning](#example)
 
+## Commit 규칙
+- <type>(<scope>): <subject>
+    - type
+        - init : repository 초기화에 대한 커밋
+        - feat : 새로운 기능에 대한 커밋
+        - fix : 버그 수정에 대한 커밋
+        - docs : 문서 수정에 대한 커밋
+        - style : 코드 스타일 혹은 포맷 등에 관한 커밋
+        - test : 테스트 코드 수정에 대한 커밋
 
 ## Deep Learning
 ### FAST RCNN
@@ -39,4 +48,19 @@
     -ss : 시작 시간
     -i : 추출할 동영상 파일
     -r : 1초에 추출할 이미지 갯수
-    
+   
+ ### Front-end
+ 
+ 
+ ### Backend
+ 
+ ### Server Depoly
+ - Heroku
+ - pythonanywhere
+ - AWS
+
+### Linux
+
+
+#### 참고자료
+- https://dailylifeofdeveloper.tistory.com/15 (클론코딩 가능한 사이트 정리글)
