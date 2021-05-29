@@ -50,8 +50,8 @@
     -r : 1초에 추출할 이미지 갯수
    
  ### Front-end
- 
- 
+ - 
+    
  ### Backend
  
  ### Server Depoly
