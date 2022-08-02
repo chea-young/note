@@ -5,3 +5,6 @@ video/
 # yolo 연습 부분
 YOLO/
 
+# 설정파일
+**/setting.py
+**/__pycache__/**
