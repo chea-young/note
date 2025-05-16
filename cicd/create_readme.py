@@ -1,16 +1,17 @@
 import requests
+import os
 
-owner = 'chea-young'
-repo = 'note'
-TOKEN = ''
-url = f'https://api.github.com/repos/{owner}/{repo}/issues'
+OWNER = os.getenv('OWNER')
+REPO = os.getenv('REPO')
+TOKEN = os.getenv('TOKEN')
+url = f'https://api.github.com/repos/{OWNER}/{REPO}/issues'
+
+print(OWNER)
 
 headers = {
     'Authorization': f'token {TOKEN}',
     'Accept': 'application/vnd.github.v3+json'
 }
-
-
 
 def get_issue(issue_num):
     response = requests.get(url+f'/{issue_num}')
@@ -29,13 +30,18 @@ def issue_to_markdown(issue):
     return markdown
 
 def save_to_readme(issue_id, content):
-    with open(f'{issue_id}.md', 'w') as f:
+    filename = f'{issue_id}.md'
+    with open(filename, 'w') as f:
         f.write(content)
+    return filename
+    
 
 def main(issue_no):
     issue = issue = get_issue(issue_no);
+    print(issue)
     markdown = issue_to_markdown(issue);
-    save_to_readme(issue_no, markdown)
+    filename = save_to_readme(issue_no, markdown)
+    print(filename)
 
 if __name__ == '__main__':
     main(2)
