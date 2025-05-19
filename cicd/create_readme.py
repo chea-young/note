@@ -1,12 +1,11 @@
 import requests
 import os
+import sys
 
 OWNER = os.getenv('OWNER')
 REPO = os.getenv('REPO')
 TOKEN = os.getenv('TOKEN')
 url = f'https://api.github.com/repos/{OWNER}/{REPO}/issues'
-
-print(OWNER)
 
 headers = {
     'Authorization': f'token {TOKEN}',
@@ -44,4 +43,5 @@ def main(issue_no):
     print(filename)
 
 if __name__ == '__main__':
-    main(2)
+    issue_no = sys.argv[1]
+    main(issue_no)
