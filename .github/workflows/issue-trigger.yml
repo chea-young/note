@@ -1,0 +1,56 @@
+name: Create markdown on Issue Creation
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12.1'
+          
+      - name: Set environment variables
+        run: |
+          echo "OWNER=${{ github.repository_owner }}" >> $GITHUB_ENV
+          echo "REPO=${{ github.event.repository.name }}" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        if: env.run_script == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          cd cicd
+          pip install -r requirements.txt
+
+      - name: Run Python script
+        if: env.run_script == 'true'
+        run: |
+          cd cicd
+          python create_readme.py ${{ github.event.issue.number }}
+
+      - name: Configure Git
+        if: env.run_script == 'true'
+        run: |
+          git config --local user.email "${{ secrets.ACTION_EMAIL }}"
+          git config --local user.name "${{ secrets.ACTION_NAME }}"
+
+      - name: Commit changes
+        if: env.run_script == 'true'
+        run: |
+          git add .
+          git commit -m "Feature: add markdown (#${{ github.event.issue.number }})" || echo "No changes to commit"
+
+      - name: Push changes
+        if: env.run_script == 'true'
+        run: |
+          git push
