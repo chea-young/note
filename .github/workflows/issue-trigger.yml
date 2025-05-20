@@ -54,5 +54,6 @@ jobs:
       - name: Push changes
         if: env.run_script == 'true'
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/chea-young/note.git
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
