@@ -1,5 +1,6 @@
 # 목차
 1. [Deep Learning](#example)
+2. 웹 크롤링
 
 ## Commit 규칙
 - <type>(<scope>): <subject>
@@ -51,19 +52,13 @@
     - ss : 시작 시간
     - i : 추출할 동영상 파일
     - r : 1초에 추출할 이미지 갯수
-   
- ### Front-end
- - 
-    
+
  ### Backend
  
  ### Server Depoly
  - Heroku
  - pythonanywhere
  - AWS
-
-### Linux
-
 
 #### 참고자료
 - https://dailylifeofdeveloper.tistory.com/15 (클론코딩 가능한 사이트 정리글)
